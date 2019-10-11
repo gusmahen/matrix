@@ -1,0 +1,56 @@
+print("\33[35m=-----------------------------------------------------------------=\33[35m")
+print("\33[32m=---                    Tools Invers matrix3x3                 ---=\33[32m")
+print("\33[34m=---                        Mahenji Group                      ---=\33[34m")
+print("\33[36m=-----------------------------------------------------------------=\33[36m")
+
+print("Pencari Matriks")
+
+a = int(input(" Nilai A = "))
+b = int(input(" Nilai B = "))
+c = int(input(" Nilai C = "))
+d = int(input(" Nilai D = "))
+e = int(input(" Nilai E = "))
+f = int(input(" Nilai F = "))
+g = int(input(" Nilai G = "))
+h = int(input(" Nilai H = "))
+i = int(input(" Nilai I = "))
+
+# Mencari Determinan
+detA = (a * e * i) + (b * f * g) + (c * d * h) - (g * e * c) - (h * f * a) - (i * d * b)
+print("\nMatriks A")
+print("| ", a, " ", b, " ", c, " |")
+print("| ", d, " ", e, " ", f, " |  ===> DetA = ", detA)
+print("| ", g, " ", h, " ", i, " |")
+print("--------------------------")
+
+# Mencari Adjoin
+a11 = (e * i) - (h * f)
+a12 = (d * i) - (g * f)
+a13 = (d * h) - (g * e)
+a21 = (b * i) - (h * c)
+a22 = (a * i) - (g * c)
+a23 = (a * h) - (g * b)
+a31 = (b * f) - (e * c)
+a32 = (a * f) - (d * c)
+a33 = (a * e) - (d * b)
+print('-----Adjoin-----')
+print("A11 = + | ", e, "", f, " |=", a11, " A12 =  - | ", d, "", f, " |=", a12, " A13 = + | ", d, "", e, " |=", a13)
+print("         | ", h, "", i, " |              | ", g, "", i, " |              | ", g, "", h, " |")
+
+print("\nA21 = - | ", b, "", c, " |=", a21, " A22 = + | ", a, "", c, " |=", a22, " A23 = - | ", a, "", b, " |=", a23)
+print("         | ", h, "", i, " |              | ", g, "", i, " |              | ", g, "", h, " |")
+
+print("\nA31 = + | ", b, "", c, " |=", a31, " A32 = - | ", a, "", c, " |=", a32, " A33 = + | ", a, "", b, " |=", a33)
+print("         | ", e, "", f, " |               | ", d, "", f, " |              | ", d, "", e, " |")
+
+# Menampilkan Adjoin
+print("------------------------------------------------------------------------------")
+print("Adj = | ", a11 * (1), "", a12 * (-1), "", a13 * (1), " |")
+print("      | ", a21 * (-1), "", a22 * (1), "", a23 * (-1), " |")
+print("      | ", a31 * (1), "", a32 * (-1), "", a33 * (1), " |")
+print("")
+print("Adjoin di Transpose menjadi = ")
+print("A Transpose = | ", a11 * (1), '', a21 * (-1), '', a31 * (1), ' |')
+print('             | ', a12 * (-1), '', a22 * (1), '', a32 * (-1), ' |')
+print('             | ', a13 * (1), '', a23 * (-1), '', a33 * (1), ' |')
+print("-------------------------------------------------------------------------------")
